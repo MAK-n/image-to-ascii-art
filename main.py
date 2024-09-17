@@ -22,6 +22,11 @@ def resizeImage(image, new_width=100):
     new_height = int(new_width / aspect_ratio)
     return image.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
+def brightenPixelColour(pixel, factor=1.5):
+    """Brighten the pixel by a given factor."""
+    return tuple(min(int(c * factor), 255) for c in pixel)
+
+
 def imageToAscii(image, draw):
     """Convert image to ASCII art and draw it on a new image."""
     width, height = image.size
@@ -31,6 +36,7 @@ def imageToAscii(image, draw):
             luminosity = getLuminosity(pixel)
             ascii_index = luminosity * (len(chars) - 1) // 255
             asciiPixel = chars[ascii_index]
+            pixel = brightenPixelColour(pixel)
             draw.text((x * char_width, y * char_height), asciiPixel, fill=pixel)
 
 def main(Image_width=100):
