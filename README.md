@@ -59,5 +59,5 @@ This project provides a Python script to convert images into ASCII art. It uses 
 
 ## Example
 
-For an example of how the output looks, check out the ![imageforgithub](https://github.com/user-attachments/assets/90642e70-cd95-4e04-a186-fcdb2641712f)
+An example of how the output looks: ![imageforgithub](https://github.com/user-attachments/assets/90642e70-cd95-4e04-a186-fcdb2641712f)
 
